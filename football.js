@@ -34,9 +34,19 @@ Module.register("football", {
             console.log(response);
             console.log("1");
             console.log(response.matches);
+            var respss = response.matches;
+            $.each(respss, function (key, value) {
+                alert(key + ": " + value.awayTeam.name);
+            });
             console.log("2");
             console.log(response[2]);
             console.log("3");
+            var i, j, x = "";
+            for (i in response.matches) {
+                for (j in i.awayTeam) {
+                    console.log(j.name);
+                }
+            }
 
         });
         
