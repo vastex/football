@@ -33,20 +33,10 @@ Module.register("football", {
             // do something with the response, e.g. isolate the id of a linked resource   
             console.log(response);
             console.log("1");
-            for (var matches in response) {
-                
-                console.log(matches);
-                if (matches == "matches") {
-                    console.log("bam oida");
-                    for (var einzeln in matches) {
-                        console.log(einzeln);
-                    }
-                }
-            }
-            $.each(JSON.parse(response), function (idx, obj) {
-                alert(obj.matches);
-            });
-
+            console.log(response.matches);
+            console.log("2");
+            console.log(response[2]);
+            console.log("3");
 
         });
         
