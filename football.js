@@ -35,10 +35,14 @@ Module.register("football", {
             console.log("1");
             for (var matches in response) {
                 
-                console.log("matches");
+                console.log(matches);
+                if (matches == "matches") {
+                    console.log("bam oida");
+                    for (var einzeln in matches) {
+                        console.log(einzeln);
+                    }
+                }
             }
-            var jsobn = $.parseJSON(response);
-            console.log(jsobn.matches);
 
 
         });
