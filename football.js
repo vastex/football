@@ -39,7 +39,7 @@ Module.register("football", {
             });
 
         });
-        this.sendSocketNotification('GET_TICKERS', url);
+        
     },
 
     notificationReceived: function () { },
