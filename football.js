@@ -2,7 +2,7 @@ Module.register("football", {
     defaults: {},
     start: function () { },
     getScripts: function () {
-        return [this.file("bower_components/jquery-3.4.1.min/index.js")];
+        return ["https://code.jquery.com/jquery-3.4.1.min.js"];
     },
     getDom: function () {
         $.ajax({
