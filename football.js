@@ -43,6 +43,9 @@ Module.register("football", {
                     }
                 }
             }
+            $.each($.parseJSON(response), function (idx, obj) {
+                console.log(obj.matches);
+            });
 
 
         });
