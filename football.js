@@ -34,6 +34,7 @@ Module.register("football", {
             console.log(response);
             var matches = response[1];
             $.each(matches, function () {
+                console.log(matches);
                 $.each(this, function (name, value) {
                     console.log(value.homeTeam.name);
                 });
