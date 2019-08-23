@@ -43,8 +43,8 @@ Module.register("football", {
                     }
                 }
             }
-            $.each($.parseJSON(response), function (idx, obj) {
-                console.log(obj.matches);
+            $.each(JSON.parse(response), function (idx, obj) {
+                alert(obj.matches);
             });
 
 
