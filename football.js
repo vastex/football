@@ -46,6 +46,7 @@ Module.register("football", {
                 for (j in i.awayTeam) {
                     console.log(j.name);
                 }
+                console.log(i.awayTeam.name);
             }
 
         });
