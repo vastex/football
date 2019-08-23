@@ -1,6 +1,9 @@
 Module.register("football", {
     defaults: {},
     start: function () { },
+    getScripts: function () {
+        return [this.file("bower_components/jquery-3.4.1.min.js")];
+    },
     getDom: function () {
         $.ajax({
             headers: { 'X-Auth-Token': 'f808fe88377e4d759e8fcb1d6eaa27e9' },
@@ -20,7 +23,5 @@ Module.register("football", {
     },
     notificationReceived: function () { },
     socketNotificationReceived: function () { },
-    getScripts: function () {
-        return [this.file("bower_components/jquery-3.4.1.js")];
-    },
+    
 })
