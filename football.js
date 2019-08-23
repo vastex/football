@@ -32,13 +32,11 @@ Module.register("football", {
         }).done(function (response) {
             // do something with the response, e.g. isolate the id of a linked resource   
             console.log(response);
-            var matches = response[1];
-            $.each(matches, function () {
-                console.log(matches);
-                $.each(this, function (name, value) {
-                    console.log(value.homeTeam.name);
-                });
-            });
+            for (var matches in response) {
+                for (match in matches) {
+                    console.log(match);
+                }
+            }
 
         });
         
