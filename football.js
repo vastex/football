@@ -43,9 +43,6 @@ Module.register("football", {
             console.log("3");
             var i, j, x = "";
             for (i in response.matches) {
-                for (j in i.awayTeam) {
-                    console.log(j.name);
-                }
                 console.log(i.awayTeam.name);
             }
 
