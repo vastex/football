@@ -26,7 +26,7 @@ Module.register("football", {
     getStanding: function () {
         $.ajax({
             headers: { 'X-Auth-Token': 'f808fe88377e4d759e8fcb1d6eaa27e9' },
-            url: "http://api.football-data.org/v2/competitions/2003/matches",
+            url: "http://api.football-data.org/v2/matches",
             dataType: 'json',
             type: 'GET',
         }).done(function (response) {
