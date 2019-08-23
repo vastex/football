@@ -34,7 +34,7 @@ Module.register("football", {
             console.log(response);
             for (var matches in response) {
                 for (match in matches) {
-                    console.log(match);
+                    console.log(match.homeTeam);
                 }
             }
 
