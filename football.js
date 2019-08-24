@@ -37,13 +37,13 @@ Module.register("football", {
             $.each(respss, function (key, value) {
                 var homescore = value.score.fullTime.homeTeam;
                 var fremdscore = value.score.fullTime.awayTeam;
-                if (value.score.fullTime.homeTeam == "null") {
+                if (!value.score.fullTime.homeTeam) {
                     homescore = 0;
                 }
-                if (value.score.fullTime.awayTeam == "null") {
+                if (!value.score.fullTime.awayTeam) {
                     fremdscore = 0;
                 }
-                console.log(key + ": " + " AWAY: " + value.awayTeam.name + "Score: " + value.score.fullTime.awayTeam + "HOME: " + value.homeTeam.name + "Score: " + value.score.fullTime.homeTeam);
+                //console.log(key + ": " + " AWAY: " + value.awayTeam.name + "Score: " + value.score.fullTime.awayTeam + "HOME: " + value.homeTeam.name + "Score: " + value.score.fullTime.homeTeam);
                 $('#standing tr:last').after("<tr><td>" + value.homeTeam.name + "</td><td> " + value.awayTeam.name + "</td><td>" + value.score.fullTime.homeTeam + ":" + value.score.fullTime.awayTeam + " </td></tr>");
             });
         });
