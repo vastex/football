@@ -32,20 +32,10 @@ Module.register("football", {
         }).done(function (response) {
             // do something with the response, e.g. isolate the id of a linked resource   
             console.log(response);
-            console.log("1");
-            console.log(response.matches);
             var respss = response.matches;
             $.each(respss, function (key, value) {
-                console.log(key + ": " + value.awayTeam.name);
+                console.log(key + ": " + " AWAY: " + value.awayTeam.name + "Score: " + value.score.fullTime.awayTeam + "HOME: " + value.homeTeam.name + "Score: " + value.score.fullTime.homeTeam);
             });
-            console.log("2");
-            console.log(response[2]);
-            console.log("3");
-            var i, j, x = "";
-            for (i in response.matches) {
-                console.log(i.awayTeam.name);
-            }
-
         });
         
     },
