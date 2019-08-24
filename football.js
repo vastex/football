@@ -10,6 +10,8 @@ Module.register("football", {
     getDom: function () {
         var element = document.createElement("div");
         element.className = "myContent";
+        element.style.maxWidth = 150;
+        element.style.maxHeight = 200;
         element.innerHTML = "<table style='font-size=1rem; width:150 !important; height:200 !important; border-collapse: separate; border-spacing: 2px 0;' id='standing'><tr><th>Heim</th><th>Gast</th><th>Ergebnis</th></tr><tbody><tr></tr></tbody></table>";
         return element;
     },
@@ -44,7 +46,7 @@ Module.register("football", {
                     fremdscore = 0;
                 }
                 //console.log(key + ": " + " AWAY: " + value.awayTeam.name + "Score: " + value.score.fullTime.awayTeam + "HOME: " + value.homeTeam.name + "Score: " + value.score.fullTime.homeTeam);
-                $('#standing tr:last').after("<tr><td>" + value.homeTeam.name + "</td><td> " + value.awayTeam.name + "</td><td>" + value.score.fullTime.homeTeam + ":" + value.score.fullTime.awayTeam + " </td></tr>");
+                $('#standing tr:last').after("<tr><td>" + value.homeTeam.name + "</td><td> " + value.awayTeam.name + "</td><td>" + homescore + ":" + fremdscore + " </td></tr>");
             });
         });
         
