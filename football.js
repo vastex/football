@@ -12,7 +12,7 @@ Module.register("football", {
         element.className = "myContent";
         element.style.maxWidth = "150px";
         element.style.maxHeight = "200px";
-        element.innerHTML = "<table style='font-size:1em !important; width:150px !important; height:200px !important; border-collapse: separate; border-spacing: 2px 0;' id='standing'><tr><th>Heim</th><th>Gast</th><th>Ergebnis</th></tr><tbody><tr></tr></tbody></table>";
+        element.innerHTML = "<table style='font-size:1em !important; width:150px !important; height:200px !important; border-collapse: separate; border-spacing: 2px 0;' id='standing'>";
         return element;
     },
     scheduleUpdate: function (delay) {
@@ -44,7 +44,7 @@ Module.register("football", {
                     fremdscore = 0;
                 }
                 //console.log(key + ": " + " AWAY: " + value.awayTeam.name + "Score: " + value.score.fullTime.awayTeam + "HOME: " + value.homeTeam.name + "Score: " + value.score.fullTime.homeTeam);
-                $('#standing tr:last').after("<tr><td>" + value.homeTeam.name + "</td><td> " + value.awayTeam.name + "</td><td>" + homescore + ":" + fremdscore + " </td></tr>");
+                $('#standing tbody').append("<tr><td>" + value.homeTeam.name + "</td><td> " + value.awayTeam.name + "</td><td>" + homescore + ":" + fremdscore + " </td></tr>");
             });
         });
         
