@@ -12,13 +12,11 @@ Module.register("football", {
         element.className = "myContent";
         element.style.maxWidth = "150px";
         element.style.maxHeight = "200px";
-        element.innerHTML = "<table style='font-size:1em; width:150px !important; height:200px !important; border-collapse: separate; border-spacing: 2px 0;' id='standing'><tr><th>Heim</th><th>Gast</th><th>Ergebnis</th></tr><tbody><tr></tr></tbody></table>";
+        element.innerHTML = "<table style='font-size:1em !important; width:150px !important; height:200px !important; border-collapse: separate; border-spacing: 2px 0;' id='standing'><tr><th>Heim</th><th>Gast</th><th>Ergebnis</th></tr><tbody><tr></tr></tbody></table>";
         return element;
     },
     scheduleUpdate: function (delay) {
         var nextLoad = 100000;
-        
-
         var self = this;
         setInterval(function () {
             self.getStanding();
