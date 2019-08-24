@@ -36,7 +36,7 @@ Module.register("football", {
             console.log(response.matches);
             var respss = response.matches;
             $.each(respss, function (key, value) {
-                alert(key + ": " + value.awayTeam.name);
+                console.log(key + ": " + value.awayTeam.name);
             });
             console.log("2");
             console.log(response[2]);
