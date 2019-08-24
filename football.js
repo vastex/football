@@ -10,13 +10,8 @@ Module.register("football", {
     getDom: function () {
         var element = document.createElement("div");
         element.className = "myContent";
-        element.innerHTML = "<table class='table' id='standing'><tr><th>Heim</th><th>Gast</th><th>Ergebnis</th></tr><tbody><tr></tr></tbody></table>";
+        element.innerHTML = "<table style='font-size=1rem; width:150; height:200;' id='standing'><tr><th>Heim</th><th>Gast</th><th>Ergebnis</th></tr><tbody><tr></tr></tbody></table>";
         return element;
-    },
-    getStyles: function() {
-        return [
-                "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" //load css
-        ];
     },
     scheduleUpdate: function (delay) {
         var nextLoad = 100000;
@@ -40,6 +35,14 @@ Module.register("football", {
             console.log(response);
             var respss = response.matches;
             $.each(respss, function (key, value) {
+                var homescore = value.score.fullTime.homeTeam;
+                var fremdscore = value.score.fullTime.awayTeam;
+                if (value.score.fullTime.homeTeam == null) {
+                    homescore = 0;
+                }
+                if (value.score.fullTime.awayTeam == null) {
+                    fremdscore = 0;
+                }
                 console.log(key + ": " + " AWAY: " + value.awayTeam.name + "Score: " + value.score.fullTime.awayTeam + "HOME: " + value.homeTeam.name + "Score: " + value.score.fullTime.homeTeam);
                 $('#standing tr:last').after("<tr><td>" + value.homeTeam.name + "</td><td> " + value.awayTeam.name + "</td><td>" + value.score.fullTime.homeTeam + ":" + value.score.fullTime.awayTeam + " </td></tr>");
             });
