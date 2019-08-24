@@ -10,9 +10,9 @@ Module.register("football", {
     getDom: function () {
         var element = document.createElement("div");
         element.className = "myContent";
-        element.style.maxWidth = 150;
-        element.style.maxHeight = 200;
-        element.innerHTML = "<table style='font-size=1rem; width:150 !important; height:200 !important; border-collapse: separate; border-spacing: 2px 0;' id='standing'><tr><th>Heim</th><th>Gast</th><th>Ergebnis</th></tr><tbody><tr></tr></tbody></table>";
+        element.style.maxWidth = "150px";
+        element.style.maxHeight = "200px";
+        element.innerHTML = "<table style='font-size=1rem; width:150px !important; height:200px !important; border-collapse: separate; border-spacing: 2px 0;' id='standing'><tr><th>Heim</th><th>Gast</th><th>Ergebnis</th></tr><tbody><tr></tr></tbody></table>";
         return element;
     },
     scheduleUpdate: function (delay) {
