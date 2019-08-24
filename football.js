@@ -14,13 +14,14 @@ Module.register("football", {
         return element;
     },
     scheduleUpdate: function (delay) {
-        var nextLoad = 60000;
+        var nextLoad = 100000;
+        
 
         var self = this;
         setInterval(function () {
             self.getStanding();
         }, nextLoad);
-
+        $('#standing tbody').empty();
         
     },
     getStanding: function () {
@@ -35,6 +36,7 @@ Module.register("football", {
             var respss = response.matches;
             $.each(respss, function (key, value) {
                 console.log(key + ": " + " AWAY: " + value.awayTeam.name + "Score: " + value.score.fullTime.awayTeam + "HOME: " + value.homeTeam.name + "Score: " + value.score.fullTime.homeTeam);
+                $('#standing tr:last').after("<tr><td>" + value.homeTeam.name + "</td><td> " + value.awayTeam.name + "</td><td>" + value.score.fullTime.homeTeam + ":" + value.score.fullTime.awayTeam + " </td></tr>");
             });
         });
         
