@@ -10,8 +10,13 @@ Module.register("football", {
     getDom: function () {
         var element = document.createElement("div");
         element.className = "myContent";
-        element.innerHTML = "<table style='width:224; height:300;' id='standing'><tr><th>Heim</th><th>Gast</th><th>Ergebnis</th></tr><tbody><tr></tr></tbody></table>";
+        element.innerHTML = "<table class='table' id='standing'><tr><th>Heim</th><th>Gast</th><th>Ergebnis</th></tr><tbody><tr></tr></tbody></table>";
         return element;
+    },
+    getStyles: function() {
+        return [
+                "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" //load css
+        ];
     },
     scheduleUpdate: function (delay) {
         var nextLoad = 100000;
