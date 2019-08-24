@@ -10,7 +10,7 @@ Module.register("football", {
     getDom: function () {
         var element = document.createElement("div");
         element.className = "myContent";
-        element.innerHTML = "<table style='font-size=1rem; width:150; height:200;' id='standing'><tr><th>Heim</th><th>Gast</th><th>Ergebnis</th></tr><tbody><tr></tr></tbody></table>";
+        element.innerHTML = "<table style='font-size=1rem; width:150 !important; height:200 !important; border-collapse: separate; border-spacing: 2px 0;' id='standing'><tr><th>Heim</th><th>Gast</th><th>Ergebnis</th></tr><tbody><tr></tr></tbody></table>";
         return element;
     },
     scheduleUpdate: function (delay) {
@@ -37,10 +37,10 @@ Module.register("football", {
             $.each(respss, function (key, value) {
                 var homescore = value.score.fullTime.homeTeam;
                 var fremdscore = value.score.fullTime.awayTeam;
-                if (value.score.fullTime.homeTeam == null) {
+                if (value.score.fullTime.homeTeam == "null") {
                     homescore = 0;
                 }
-                if (value.score.fullTime.awayTeam == null) {
+                if (value.score.fullTime.awayTeam == "null") {
                     fremdscore = 0;
                 }
                 console.log(key + ": " + " AWAY: " + value.awayTeam.name + "Score: " + value.score.fullTime.awayTeam + "HOME: " + value.homeTeam.name + "Score: " + value.score.fullTime.homeTeam);
