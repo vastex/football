@@ -16,7 +16,7 @@ Module.register("football", {
         return element;
     },
     scheduleUpdate: function (delay) {
-        var nextLoad = 100000;
+        var nextLoad = 60000;
         var self = this;
         setInterval(function () {
             self.getStanding();
