@@ -10,9 +10,9 @@ Module.register("football", {
     getDom: function () {
         var element = document.createElement("div");
         element.className = "myContent";
-        element.style.maxWidth = "150px";
+        element.style.maxWidth = "170px";
         element.style.maxHeight = "200px";
-        element.innerHTML = " <table style='font-size:1em !important; width:150px !important; height:200px !important; border-collapse: separate; border-spacing: 2px 0;' id='standing'><thead>th>Heim</th><th>Gast</th><th>Ergebnis</th></thead><tbody><tr></tr></tbody></table>";
+        element.innerHTML = " <table style='font-size:1em !important; width:170px !important; height:200px !important; border-collapse: separate; border-spacing: 2px 0;' id='standing'><thead>th>Heim</th><th>Gast</th><th>Ergebnis</th></thead><tbody><tr></tr></tbody></table>";
         return element;
     },
     scheduleUpdate: function (delay) {
@@ -38,6 +38,15 @@ Module.register("football", {
             $.each(respss, function (key, value) {
                 var homescore = value.score.fullTime.homeTeam;
                 var fremdscore = value.score.fullTime.awayTeam;
+                var hometeam = value.homeTeam.name;
+                var awayteam = value.awayTeam.name;
+
+                if (hometeam.length > 14) {
+                    hometeam = hometeam.substring(0, 14);
+                }
+                if (awayteam.length > 14) {
+                    awayteam = awayteam.substring(0, 14);
+                }
                 if (!value.score.fullTime.homeTeam) {
                     homescore = 0;
                 }
@@ -45,7 +54,7 @@ Module.register("football", {
                     fremdscore = 0;
                 }
                 //console.log(key + ": " + " AWAY: " + value.awayTeam.name + "Score: " + value.score.fullTime.awayTeam + "HOME: " + value.homeTeam.name + "Score: " + value.score.fullTime.homeTeam);
-                $('#standing tbody').append("<tr><td>" + value.homeTeam.name + "</td><td> " + value.awayTeam.name + "</td><td>" + homescore + ":" + fremdscore + " </td></tr>");
+                $('#standing tbody').append("<tr><td>" + hometeam + "</td><td> " + awayteam + "</td><td>" + homescore + ":" + fremdscore + " </td></tr>");
             });
         });
         
