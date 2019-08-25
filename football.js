@@ -12,7 +12,7 @@ Module.register("football", {
         element.className = "myContent";
         element.style.maxWidth = "150px";
         element.style.maxHeight = "200px";
-        element.innerHTML = "<table style='font-size:1em !important; width:150px !important; height:200px !important; border-collapse: separate; border-spacing: 2px 0;' id='standing'>";
+        element.innerHTML = " <table style='font-size:1em !important; width:150px !important; height:200px !important; border-collapse: separate; border-spacing: 2px 0;' id='standing'><thead>th>Heim</th><th>Gast</th><th>Ergebnis</th></thead><tbody><tr></tr></tbody></table>";
         return element;
     },
     scheduleUpdate: function (delay) {
