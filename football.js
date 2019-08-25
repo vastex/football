@@ -16,12 +16,13 @@ Module.register("football", {
         return element;
     },
     scheduleUpdate: function (delay) {
-        var nextLoad = 60000;
+        var nextLoad = 50000;
         var self = this;
         setInterval(function () {
+            $('#standing tbody').empty();
             self.getStanding();
         }, nextLoad);
-        $('#standing tbody').empty();
+        
         
     },
     getStanding: function () {
